@@ -8,15 +8,15 @@ import events from "@core/events";
 import RichEditor from "../RichEditor";
 
 events.onVanillaReady(() => {
-    setupNewDiscussionForm();
+    setupEditor();
     setupCommentForm();
 });
 
 /**
  * Set up the new discussion form if it exists.
  */
-function setupNewDiscussionForm() {
-    const discussionFormContainer = document.querySelectorAll("#DiscussionForm .js-richText");
+function setupEditor() {
+    const discussionFormContainer = document.querySelectorAll(".js-richText");
 
     discussionFormContainer.forEach(container => {
         new RichEditor(container);
@@ -24,11 +24,11 @@ function setupNewDiscussionForm() {
 }
 
 function setupCommentForm() {
-    const commentFormContainer = document.querySelector("#Form_Comment .js-richText");
+    // const commentFormContainer = document.querySelector("#Form_Comment .js-richText");
 
-    if (commentFormContainer) {
-        new RichEditor(commentFormContainer);
-    }
+    // if (commentFormContainer) {
+    //     new RichEditor(commentFormContainer);
+    // }
 
     $(document).on("EditCommentFormLoaded", (event, container) => {
         const $commentFormContainer = $(container).find(".js-richText");
