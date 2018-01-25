@@ -4,15 +4,13 @@
  * @license GPLv2
  */
 
+// import axios from "axios";
+
 import axios from "axios";
 
 const instance = axios.create();
+instance.defaults.timeout = 2500;
 
-const middlewares = [];
-
-/**
- * Register a middleware to run before after every request.
- */
-export const registerMiddleware = (callback) => middlewares.push(callback);
+// TODO: Add response interceptors to fire certain events.
 
 export default instance;

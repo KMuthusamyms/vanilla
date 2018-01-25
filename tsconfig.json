@@ -1,5 +1,6 @@
 {
     "compilerOptions": {
+        "allowJs": true,
         "checkJs": true,
         "jsx": "preserve",
         "lib": [
@@ -7,12 +8,14 @@
             "dom",
             "dom.iterable"
         ],
+        "target": "es2017",
         "baseUrl": ".",
         "paths": {
             "@core/*": ["./src/scripts/*"],
             "@vanilla/*": ["./applications/vanilla/src/scripts/*"],
             "@dashboard/*": ["./applications/dashboard/src/scripts/*"]
-        }
+        },
+        "moduleResolution": "node"
     },
     "exclude": [
         "**/node_modules"
